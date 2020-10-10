@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'animated_page.dart';
+import 'transition_page.dart';
 
 
 // double firstSize = 100;
@@ -44,11 +45,22 @@ class _FirstPageState extends State<FirstPage> {
     print("build");
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).push(
+            MaterialPageRoute(
+              settings: const RouteSettings(name: "/transition_page"),  // ルーティング名明記可能
+              builder: (context) {
+              return TransitionPage();
+            },
+            ),
+          ),
+        ),
         title: Text("FIRST"),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.arrow_forward_ios),
+            icon: Icon(Icons.arrow_forward),
             onPressed: () => Navigator.of(context).push(
               MaterialPageRoute(
                 settings: const RouteSettings(name: "/animated_page"),  // ルーティング名明記可能

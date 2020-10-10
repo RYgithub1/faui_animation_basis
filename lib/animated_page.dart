@@ -20,7 +20,7 @@ class _AnimatedPageState extends State<AnimatedPage> {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.arrow_forward_ios),
+            icon: Icon(Icons.arrow_forward),
             onPressed: () => Navigator.of(context).push(
               MaterialPageRoute(
                 settings: const RouteSettings(name: "/transition_page"),  // ルーティング名明記可能
